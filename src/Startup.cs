@@ -19,7 +19,10 @@
         // <ConfigureServices> 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+			// URI: https://gfrcosmosdbaccount.documents.azure.com:443/
+			// Primary Key: 2X7IP8uCzYMkIkk4bWuqGVMWwSvQwsv5iUcx94R9DRnjW3mTsLjW8xGrUyWc558eaGratbqpedSGVjCeW180Vg==
+
+			services.AddControllersWithViews();
             services.AddSingleton<ICosmosDbService>(InitializeCosmosClientInstanceAsync(Configuration.GetSection("CosmosDb")).GetAwaiter().GetResult());
         }
         // </ConfigureServices> 
